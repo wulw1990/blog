@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Engineering
 title: "ghost.org: 一个好用的在线blog平台"
 tags: [Engineering, Blog Platform]
 date-string: January 10, 2016

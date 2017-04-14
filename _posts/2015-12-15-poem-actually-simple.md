@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Life
 title: "其实很简单"
 tags: [诗歌, 生活]
 date-string: December 15, 2015

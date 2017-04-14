@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "Paper Reading: ResNext--Aggregated Residual Transformations for Deep Neural Networks"
 tags: [Paper Reading, Deep Learning, Network Building Block]
 date-string: April 11, 2017

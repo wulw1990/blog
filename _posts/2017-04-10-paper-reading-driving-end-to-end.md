@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "CVPR2017: End-to-end Learning of Driving Models from Large-scale Video Datasets"
 tags: [Paper Reading, Deep Learning, Autonomous Driving]
 date-string: April 10, 2017

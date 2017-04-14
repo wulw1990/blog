@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-categories: deep learning
+categories: PaperReading
 title: "CVPR2017: Learning Features by Watching Objects Move"
 tags: [Paper Reading, Deep Learning, Unsupervised Learning]
 date-string: April 13, 2017

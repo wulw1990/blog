@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "Paper Reading: PVANET--Deep but Lightweight Neural Networks for Real-time Object Detection"
 tags: [Paper Reading, Deep Learning, Object Detection]
 date-string: April 05, 2017

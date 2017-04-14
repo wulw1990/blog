@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: life
+categories: Life
 title: "HIIT: 高强度间歇训练"
 tags: [生活, 健康, 健康]
 date-string: September 11, 2015

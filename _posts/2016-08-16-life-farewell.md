@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Life
 title: "一点碎碎念而已"
 tags: [生活, 离别]
 date-string: August 16, 2016

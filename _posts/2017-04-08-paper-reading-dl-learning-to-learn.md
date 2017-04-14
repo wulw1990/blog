@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "CVPR2017: Learning to learn by gradient descent by gradient descent"
 tags: [Paper Reading, Deep Learning, Learning to Learn]
 date-string: April 08, 2017

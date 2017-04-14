@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: life
+categories: Life
 title: "初见龙泉古刹"
 tags: [生活, 旅行, 宗教, 文化]
 date-string: September 28, 2015

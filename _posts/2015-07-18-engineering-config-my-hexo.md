@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Engineering
 title: "配置我的HEXO"
 tags: [Engineering, Blog Platform]
 date-string: July 18, 2015

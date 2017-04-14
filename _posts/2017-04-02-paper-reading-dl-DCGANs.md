@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "Paper Reading: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"
 tags: [Paper Reading, Deep Learning, GAN]
 date-string: April 02, 2017

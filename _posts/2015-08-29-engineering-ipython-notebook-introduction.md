@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: life
+categories: Engineering
 title: "iPython Notebook Introcduction"
 tags: [Engineering, Coding]
 date-string: May 29, 2015

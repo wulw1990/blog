@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Project
 title: "Project: Giga Pixel"
 tags: [Project, Giga Pixel]
 date-string: July 10, 2015

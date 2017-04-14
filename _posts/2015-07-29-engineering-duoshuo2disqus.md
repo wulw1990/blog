@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Engineering
 title: "多说迁移到Disqus"
 tags: [Engineering, Blog Platform]
 date-string: July 29, 2015

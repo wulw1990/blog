@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "Paper Reading: Generative Adversarial Networks"
 tags: [Paper Reading, Deep Learning, GAN]
 date-string: April 01, 2017

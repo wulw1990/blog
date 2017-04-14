@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: life
+categories: Life
 title: "西藏自驾游之路线与行程"
 tags: [生活, 旅行, 西藏]
 date-string: April 10, 2016

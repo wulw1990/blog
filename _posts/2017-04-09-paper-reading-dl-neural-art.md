@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: deep learning
+categories: PaperReading
 title: "Paper Reading: A Neural Algorithm of Artistic Style"
 tags: [Paper Reading, Deep Learning, Style Transfer]
 date-string: April 10, 2017

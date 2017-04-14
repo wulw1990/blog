@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Life
 title: "话剧: 如梦之梦"
 tags: [艺术, 话剧]
 date-string: December 16, 2015

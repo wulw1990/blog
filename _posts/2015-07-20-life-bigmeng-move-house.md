@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: posts
+categories: Life
 title: "BigMeng搬宿舍"
 tags: [生活]
 date-string: July 20, 2015
