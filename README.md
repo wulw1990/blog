@@ -1,3 +1,7 @@
+# My Page
+ - liweiwu.com
+ - wulw1990.github.io
+
 # Clean+Simple Jekyll Theme
 
 The Clean+Simple is an easy to modify, tumblr style Jekyll theme.
