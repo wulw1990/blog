@@ -1,0 +1,19 @@
+# editor
+*~
+*.orig
+*.swp
+*.pyc
+.vscode
+*.o
+*.out
+*.log
+*.DS_Store
+
+# build
+install/*
+target/*
+deps/*
+build/*
+
+.sass-cache/*
+_site/*

@@ -3,361 +3,657 @@
   <channel>
     <title>Clean+Simple Theme</title>
     <description>Something...</description>
-    <link>http://localhost:4000/</link>
+    <link>http://localhost:8000/</link>
     <atom:link href="nathanrooy.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Jan 2017 09:24:44 -0500</pubDate>
-    <lastBuildDate>Thu, 19 Jan 2017 09:24:44 -0500</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Fri, 14 Apr 2017 09:58:26 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Apr 2017 09:58:26 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
       
     
     <item>
-        <title>Sample Post</title>
-        <description>&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
+        <title>CVPR2017: Learning Features by Watching Objects Move</title>
+        <description>&lt;p&gt;其实做法非常简单，就是利用视频的光流信息来做前景分割，然后用模型去学习前景分割的结果。结果发现，虽有利用光流信息得到的分割结果噪声很大（pseudo ground truth），但是训练出来的模型确得到很好的特征，可以用于物体检测等。&lt;/p&gt;
 
-&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
+&lt;p&gt;本文最值得学习的是写作的手法，虽然方法非常简单，但是写作上比较有水平。&lt;/p&gt;
 
-&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+&lt;p&gt;1.在Introduction部分，把这种利用间接非监督任务（pretext task）来学习好的特征的方法进行了归纳。作者归纳了以前的四种pretext task：Example pretext tasks include reconstruct-ing the input [3, 18, 41], predicting the pixels of the next frame in a video stream [15], metric learning on object track endpoints [43], temporally ordering shuffled frames from a video [26], and spatially ordering patches from a static im- age [6, 27]. 
+而本文是一种新的pretext task。&lt;/p&gt;
 
-&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+&lt;p&gt;2.展开讲自己的方法之前，先讲Evaluating Feature Representations的方法。指出了这个问题的重要性，以及以前评估方法的局限性，并提出了自己的三种更general的评估方法。有点测试先行的意思。&lt;/p&gt;
 
-&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+&lt;p&gt;3.对比实验。首先直接使用ImageNet的语义分割模型（无label分割），说明无label分类的模型确实学到可可以用于其他任务的特征，而本文则是无监督的方式得到的类似特征。&lt;/p&gt;
 
-&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
-
-&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
-
-&lt;h3 id=&quot;body-text&quot;&gt;Body text&lt;/h3&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-
-&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
-
-&lt;p&gt;HTML and &lt;abbr title=&quot;cascading stylesheets&quot;&gt;CSS&lt;abbr&gt; are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.&lt;/abbr&gt;&lt;/abbr&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;list-types&quot;&gt;List Types&lt;/h2&gt;
-
-&lt;h3 id=&quot;ordered-lists&quot;&gt;Ordered Lists&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Item one
-    &lt;ol&gt;
-      &lt;li&gt;sub item one&lt;/li&gt;
-      &lt;li&gt;sub item two&lt;/li&gt;
-      &lt;li&gt;sub item three&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;unordered-lists&quot;&gt;Unordered Lists&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Item one&lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-  &lt;li&gt;Item three&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
-
-&lt;table rules=&quot;groups&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Foot1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Foot2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Foot3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;code-snippets&quot;&gt;Code Snippets&lt;/h2&gt;
-
-&lt;p&gt;Syntax highlighting via Rouge&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Non Pygments code example&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div id=&quot;awesome&quot;&amp;gt;
-    &amp;lt;p&amp;gt;This is great isn't it?&amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;buttons&quot;&gt;Buttons&lt;/h2&gt;
-
-&lt;p&gt;Make any link standout more when applying the &lt;code class=&quot;highlighter-rouge&quot;&gt;.btn&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-success&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Success Button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-warning&quot;&gt;Warning Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-danger&quot;&gt;Danger Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-info&quot;&gt;Info Button&lt;/a&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 20 Nov 2016 00:00:00 -0500</pubDate>
-        
-        <link>/posts/2016-11-20/sample-post.html</link>
-          
-        
-            <category>sample post</category>
-        
-          
-        
-            <category>posts</category>
-        
-          
-      </item>
-    
-    <item>
-        <title>Image Post</title>
-        <description>&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script&gt;window.jQuery || document.write('&lt;script src=&quot;_/js/libs/jquery-1.9.1.min.js&quot;&gt;&lt;\/script&gt;')&lt;/script&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, interdum fermentum arcu, ipsum venenatis curabitur dis. Morbi imperdiet pharetra adipiscing posuere morbi. Aliquam dictum ut nisl wisi quis fermentum, quam lectus amet, eu congue tincidunt. Eget sollicitudin amet lectus at duis vitae, sed id vitae, amet ultricies, eget proin id. Gravida cras consequat, sem elit suscipit, volutpat dui congue, quisque amet ac sit ornare aliquet, sem nec eget felis varius lacus metus. Eros eget viverra habitasse non vitae, fusce euismod commodo pellentesque nonummy sit, ultricies ullamcorper ut neque, egestas sem quisque hendrerit.&lt;/p&gt;
+&lt;p&gt;其他方面没有太多好说的。使用光流得到pseudo ground truth的方法都是既有的，而且分割的噪声是更大的，但是本文证明了噪声对特征学习影响不大。&lt;/p&gt;
 
 &lt;center&gt;
-    &lt;div class=&quot;photoset-grid-custom&quot; data-layout=&quot;213&quot;&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-1.jpg&quot; /&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-2.jpg&quot; /&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-3.jpg&quot; /&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-4.jpg&quot; /&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-5.jpg&quot; /&gt;
-        &lt;img src=&quot;/images/2016-11-19/abstract-6.jpg&quot; /&gt;
-    &lt;/div&gt;
+    &lt;img src=&quot;http://7xkiab.com1.z0.glb.clouddn.com/blog/image/2017-04-13-watch-move.jpg&quot; width=&quot;400&quot; /&gt;
 &lt;/center&gt;
 
-&lt;p&gt;Sit mollis consectetuer tempor in, sociosqu mi in ornare et, placerat in eget ac, praesent pellentesque, mollis est natoque. Quis quis, ac ac pretium sed fusce sollicitudin cursus, magna vitae placerat tincidunt sed dictumst, nullam rutrum pharetra consectetuer. Erat libero odio venenatis, et id ac ultrices convallis, ac iaculis nec vestibulum etiam nec metus, integer velit dictum. Inceptos laoreet at wisi libero dolor, id scelerisque vulputate a amet amet dapibus, at et vitae nec aliquam, fringilla vitae quam. Mauris felis nec sagittis posuere mauris, penatibus ullamcorper, tristique aliquet, vel posuere class placerat. Ornare et non magnis fusce.&lt;/p&gt;
-
-&lt;script src=&quot;/assets/js/jquery.photoset-grid.js&quot;&gt;&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-    $('.photoset-grid-custom').photosetGrid({
-    // Set the gutter between columns and rows
-    gutter: '5px',
-  
-    // Wrap the images in links
-    highresLinks: true,
-  
-    // Asign a common rel attribute
-    rel: 'print-gallery',
-
-    onInit: function(){},
-    
-    onComplete: function(){
-        // Show the grid after it renders
-        $('.photoset-grid-custom').attr('style', '');
-    }
-});
-&lt;/script&gt;
-
 </description>
-        <pubDate>Sat, 19 Nov 2016 00:00:00 -0500</pubDate>
+        <pubDate>Thu, 13 Apr 2017 00:00:00 +0800</pubDate>
         
-        <link>/posts/2016-11-19/image-post.html</link>
+        <link>/deep/learning/2017-04-13/paper-reading-dl-watch-move.html</link>
           
         
-            <category>sample post</category>
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>Unsupervised Learning</category>
         
           
         
-            <category>posts</category>
+            <category>deep</category>
+        
+            <category>learning</category>
         
           
       </item>
     
     <item>
-        <title>Syntax Highlighting Post</title>
-        <description>&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+        <title>Paper Reading: ResNext--Aggregated Residual Transformations for Deep Neural Networks</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;可以认为是ResNet的升级版。原理非常简单，一张图即可搞明白：&lt;/p&gt;
 
-&lt;h3 id=&quot;gfm-code-blocks&quot;&gt;GFM Code Blocks&lt;/h3&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170411142838359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;300&quot; /&gt;
+&lt;/center&gt;
 
-&lt;p&gt;GitHub Flavored Markdown &lt;a href=&quot;https://help.github.com/articles/creating-and-highlighting-code-blocks/&quot;&gt;fenced code blocks&lt;/a&gt; are supported. To modify styling and highlight colors edit &lt;code class=&quot;highlighter-rouge&quot;&gt;/_sass/syntax.scss&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;这种思想可以有三种实现形式：&lt;/p&gt;
 
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170411143026219?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$monospace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type-size-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;作者实验发现，三种形式效果差不多，考虑计算性能，选择第三种。&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  {% if page.previous %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.previous.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.previous.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Previous article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-  {% if page.next %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.next.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.next.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.pagination --&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;作者提出一个概念：把上述building block中除了short-cut以外的支路数量称为cardinality（基数）。作者把cardinality和depth、width两个概念并列，并在实验中证明增加cardinality比增加depth或width更加有效。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  {% if page.previous %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.previous.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.previous.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Previous article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-  {% if page.next %}
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.url }}{{ page.next.url }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ page.next.title }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next article&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  {% endif %}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /.pagination --&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170411143348329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;350&quot; /&gt;
+&lt;/center&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TagIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Page&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt;
-      &lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'index.html'&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read_yaml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'_layouts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tag_index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tag'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tag_title_prefix'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Tagged: '&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;tag_title_suffix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tag_title_suffix'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;amp;#8211;'&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag_title_prefix&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;An archive of posts tagged &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;在FLOP同样增加到2倍的情况下，增加cardinality的方法获得了最好的结果（top5:5.3%）。而且即使在FLOP只有1/2的情况下，ResNeXt也比ResNet效果好。&lt;/p&gt;
 
-&lt;h3 id=&quot;code-blocks-in-lists&quot;&gt;Code Blocks in Lists&lt;/h3&gt;
+</description>
+        <pubDate>Tue, 11 Apr 2017 00:00:00 +0800</pubDate>
+        
+        <link>/deep/learning/2017-04-11/paper-reading-dl-res-next.html</link>
+          
+        
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>Network Building Block</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>CVPR2017: End-to-end Learning of Driving Models from Large-scale Video Datasets</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;采用基于感知的策略学习（perception-based policies）来完成复杂的自动驾驶行为，正在称为计算机视觉的一个重要研究方向。作者认为，虽然基于规则的方法取得了一定的成果，但是基于学习的方法才是终极方案，尤其是在处理复杂少见场景以及需要和多个agent交互作用的情况。在这个方向上已经有不少不做，例如ALVINN等。这些工作把问题定义成从图像像素到操作的映射关系，导致训练上依赖于标定的操作。而本文采用的是无需标定的数据，这样就可以利用大量众包的视频数据，基本只需要一个行车记录仪（+速度和角速度记录）。在问题定义上，把驾驶过程定义成从图像到egomotion的映射关系，而egomotion的groundtruth可以通过速度和角速度记录记录得到。作者采用了FCN-LSTM的网络框架，并把这种网络称为：Deep Generic Driving Networks。&lt;/p&gt;
 
-&lt;p&gt;Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;1.&lt;/code&gt;). Usually this will mean indenting 3 spaces instead of 4.&lt;/p&gt;
+&lt;h2 id=&quot;原理&quot;&gt;原理&lt;/h2&gt;
+
+&lt;p&gt;具体问题定义如下式：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410142523524?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;120&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;其中S表示当前和历史的状态信息，包括：历史上见过的画面以及egomotion信息。A表示下一时刻应该采取的egomotion的集合，R表示对应的分数。egomotion有两种描述方式：一种是离散型，比如{直行，停车，左转，右转}；另一种是连续型：用一个二维的速度向量表示，实际训练时，对该二维向量离散成多个bin，进行mulit-nominal学习。这种问题定义和NLP中的语言模型非常相似，所以该模型也称为“驾驶模型”。&lt;/p&gt;
+
+&lt;p&gt;FCN-LSTM如下图：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410142733900?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;其中，FCN采用的在ImageNet上pretrain过的AlexNet，去掉了pooling5，并对fc6和fc7采用dilated convolutions。作者指出FCN比直接用CNN效果要好，是因为FCN保留了更多的spatial信息。&lt;/p&gt;
+
+&lt;p&gt;Loss方面，作者采用了：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410143725939?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;250&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;对于Accuracy，作者采用：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410143854610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;120&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;实验&quot;&gt;实验&lt;/h2&gt;
+&lt;p&gt;模型效果：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410144007704?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;加语义分割任务作为side-task的对比实验效果：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170410144116179?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;图中，a是不用side-task的方式，b是只用语义分割结果，c是用FCN+side-task的情况。示例中一个是远处有红灯，一个是前方车辆尾灯刹车灯亮，这两种情况中只有c较好地解决了。作者指出，对于只用语义分割的情况可能会丢失一些content信息例如灯的颜色，而加入side-task可以改进一些细微的和不常见的情况下的性能。&lt;/p&gt;
+
+&lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
+&lt;p&gt;主要是三个贡献：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Do step 1.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now do this:&lt;/p&gt;
-
-    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Now you can do this.&lt;/li&gt;
+  &lt;li&gt;重新定义了问题，采用了图像到egomotion的映射。&lt;/li&gt;
+  &lt;li&gt;采用了FCN-LSTM的架构。&lt;/li&gt;
+  &lt;li&gt;采用语义分割作为side-task，并提高了模型性能。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub Gist Embed&lt;/h3&gt;
-
-&lt;p&gt;An example of a Gist embed below.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
 </description>
-        <pubDate>Fri, 18 Nov 2016 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 10 Apr 2017 00:00:00 +0800</pubDate>
         
-        <link>/posts/2016-11-18/code-highlighting-post.html</link>
+        <link>/deep/learning/2017-04-10/paper-reading-driving-end-to-end.html</link>
           
         
-            <category>sample post</category>
+            <category>Paper Reading</category>
         
-            <category>code</category>
+            <category>Deep Learning</category>
         
-            <category>highlighting</category>
+            <category>Autonomous Driving</category>
         
           
         
-            <category>posts</category>
+            <category>deep</category>
+        
+            <category>learning</category>
         
           
       </item>
     
     <item>
-        <title>A Video Post</title>
-        <description>&lt;center&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/EqAnYPiZiNA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+        <title>Paper Reading: A Neural Algorithm of Artistic Style</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;解决的是一个有趣的问题，即给两幅图C(content)和S(style)，保留C的content，保留S的style，得到一副新的图像。例如：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408191713226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
 &lt;/center&gt;
 
-&lt;p&gt;Video embeds are responsive and scale with the width of the main content block with the help of &lt;a href=&quot;http://fitvidsjs.com/&quot;&gt;FitVids&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;CNN的不同层编码了不同抽象层次的信息，可以借助不同层的Feature Map来对生成图像的content和style进行约束，见下图：&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;560&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;315&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//www.youtube.com/embed/SU3kYxJmWuQ&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frameborder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409143704521?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;neural-art&quot;&gt;Neural Art&lt;/h2&gt;
+
+&lt;p&gt;本文的原理非常简单。&lt;/p&gt;
+
+&lt;p&gt;设content图像为C，待生成的图像为X。先将X设置为随机噪声，然后作为VGG的输入，C同样也过一遍VGG，这样对于某个层l，两者都会得到feature map，分为设置为P和F，则content loss定义为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409144031447?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;200&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;固定住两个支路的所有参数，除了X本身。对X本身进行梯度下降，得到的X即是和C保持了content一致性（一定意义上）。&lt;/p&gt;
+
+&lt;p&gt;对于style，loss定义稍微改变一点，使用了Gram matrix。对于某个feature map F，Gram matrix为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409144402733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;120&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;即gram matrix的维度为NxN，N为channels，每个元素的值是对第i个channel和第j个channel求内积得到的。实际上是协方差矩阵。个人理解是通过gram matrix，是的约束更多是考虑统计特征，而不是localization相关的content。&lt;/p&gt;
+
+&lt;p&gt;style loss定义为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409145138541?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;160&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;综合起来，loss为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409145446393?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;280&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;实验&quot;&gt;实验&lt;/h2&gt;
+&lt;p&gt;一些对比实验结果如下：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170409145323346?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;包括对不同层的选用，以及两个loss之前权重的选择等。&lt;/p&gt;
+
+&lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
+
+&lt;p&gt;使用了非常简单粗暴的方法，利用物体检测任务训练得到的模型（VGG）的特征，即可实现不错的图像风格转换的效果。其中，在style loss中对gram matrix的使用值得借鉴。&lt;/p&gt;
+
+&lt;p&gt;不足：这种方式需要对生成图像进行梯度下降，而VGG模型不小，耗时应该是一个主要问题。&lt;/p&gt;
+
 </description>
-        <pubDate>Mon, 14 Nov 2016 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 09 Apr 2017 00:00:00 +0800</pubDate>
         
-        <link>/posts/2016-11-14/video-post.html</link>
+        <link>/deep/learning/2017-04-09/paper-reading-dl-neural-art.html</link>
           
         
-            <category>sample post</category>
+            <category>Paper Reading</category>
         
-            <category>video</category>
+            <category>Deep Learning</category>
+        
+            <category>Style Transfer</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>CVPR2017: Learning to learn by gradient descent by gradient descent</title>
+        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+&lt;p&gt;昨天DeepMind开源了基于TensorFlow的深度学习库——&lt;a href=&quot;https://deepmind.com/blog/open-sourcing-sonnet/&quot;&gt;Sonnet&lt;/a&gt;。DeepMind之前发布的learning to learn的&lt;a href=&quot;https://github.com/deepmind/learning-to-learn&quot;&gt;代码&lt;/a&gt;实际上就是基于Sonnet实现的。&lt;/p&gt;
+
+&lt;p&gt;本文解决的是优化算法的学习问题。具体来说，机器学习中我们经常可以把优化目标表示成：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408184112158?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;150&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;标准的优化过程是更新如下过程：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408184217208?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;180&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;这样的做法只考虑了一阶导数而不考虑二阶导数，显然会损失性能。典型的方法是通过Hessian matrix等方法来弥补。而现代的更多的方法则是针对具体类问题，比如深度学习领域经常使用的方法有：momentum、Rprop、Adagrad、RMSprop、ADAM。使用这些方法的一个最大问题是：在不同的问题上需要选择不同的优化方法。&lt;/p&gt;
+
+&lt;p&gt;本文试图寻找一个大一统的方案：采用RNN来学习参数更新过程，而不是手动去选择不同的优化方法。如下式：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408184811304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;180&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;这样问题变成如何去学习函数g。作者把该问题称为：Learning to learn。&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-to-learn&quot;&gt;Learning to learn&lt;/h2&gt;
+&lt;p&gt;作者采用RNN来做Learning to learn，即学习每次迭代的参数更新。显然，采用RNN这种带记忆功能的网络来学习更符合这里的需求（克服传统方法只考虑一阶导数的缺点）。理想的优化目标为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408185028530?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;160&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;即希望这样的参数更新更有利于f的下降。&lt;/p&gt;
+
+&lt;p&gt;对于RNN，假设选择记忆的长度为T，则优化目标为：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408185413135?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;其中m表示RNN，h表示其隐状态。本文的实验中，所有的权重w均取1。&lt;/p&gt;
+
+&lt;p&gt;考虑到如果同时学习所有参数，会导致RNN的参数量过大，所以采用了Coordinatewise的方法。可以认为是把参数划分成不同的等分，然后共享参数，但是不共享隐状态。如下图：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408185747949?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;300&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;实验&quot;&gt;实验&lt;/h2&gt;
+&lt;p&gt;作者做了四个实验：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Quadratic functions&lt;/li&gt;
+  &lt;li&gt;Training a small neural network on MNIST&lt;/li&gt;
+  &lt;li&gt;Training a convolutional network on CIFAR-10&lt;/li&gt;
+  &lt;li&gt;Neural Art&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;均证明了该方法比其他优化方法更好：收敛快且loss更低，泛华性能也很好。&lt;/p&gt;
+
+&lt;p&gt;例如，Neural Art实验，loss变化曲线：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408190041014?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170408190120124?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
+&lt;p&gt;用Learning to learn的方法来作为优化算法，比其他手工选择的优化算法都要好！&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Apr 2017 00:00:00 +0800</pubDate>
+        
+        <link>/deep/learning/2017-04-08/paper-reading-dl-learning-to-learn.html</link>
+          
+        
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>Learning to Learn</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>Paper Reading: PVANET--Deep but Lightweight Neural Networks for Real-time Object Detection</title>
+        <description>&lt;h2 id=&quot;物体检测pvanet&quot;&gt;物体检测：PVANET&lt;/h2&gt;
+&lt;p&gt;最近计划重新读一遍物体检测相关的&lt;a href=&quot;https://github.com/kjw0612/awesome-deep-vision#object-detection&quot;&gt;Paper List&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;第一篇文章：PVANET: Deep but Lightweight Neural Networks for Real-time Object Detection，是Intel Imaging and Camera Technology的工作。&lt;/p&gt;
+
+&lt;h2 id=&quot;pvanet简介&quot;&gt;PVANET简介&lt;/h2&gt;
+&lt;p&gt;总体来说，这篇文章并没有提出新的检测方法，本质上是在Faster RCNN的基础上提出了改进，从而在保证精度的前提下保证实时性能。结果在VOC2012上获得了第二名的精度，但速度比第一名快了40倍，i7 CPU上达到750ms，Titan X GPU上达到了46ms。&lt;/p&gt;
+
+&lt;p&gt;目前主流的物体检测算法流程为：CNN feature extraction + region proposal + RoI classification。包括Faster RCNN等实际上都没有超出该框架，YOLO等end-to-end方法除外。&lt;/p&gt;
+
+&lt;p&gt;本文同样符合该流程，重点关注的是第一阶段（特征提取）的加速改进。作者指出，region proposal计算量很小，而classification阶段已经有很多既有方法可以采用，例如：truncated SVD。所以本文重点关注的是第一阶段：CNN feature extraction。&lt;/p&gt;
+
+&lt;p&gt;总的设计原则是“less channels with more layers”，即让网络“又高又瘦”。主要的手段有：concatenated ReLU(C.RuLU), Inception, HyperNet, batch normalization, residual connection, learning rate schedule等。&lt;/p&gt;
+
+&lt;p&gt;当前精度最高的（mAP最大）模型是Faster R-CNN + ResNet-101，耗时是本文模型的40多倍。&lt;/p&gt;
+
+&lt;h2 id=&quot;具体内容&quot;&gt;具体内容&lt;/h2&gt;
+&lt;p&gt;本文基本都是实现细节，复现应该方便，而且作者提供了代码：https://github.com/sanghoon/ pva-faster-rcnn&lt;/p&gt;
+
+&lt;h3 id=&quot;concatenated-relucrulu&quot;&gt;concatenated ReLU(C.RuLU)&lt;/h3&gt;
+&lt;p&gt;作者指出在比较底层的block中，节点的输出往往倾向于成对出现，即有一个x就有倾向于有一个-x这样。所以在比较底层的block中，可以使用C.RuLU来介绍一半的计算量（卷积的channels减半）。C.RuLU原理如下图：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170405150032012?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;200&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;inception&quot;&gt;Inception&lt;/h3&gt;
+&lt;p&gt;作者指出Inception对检测不同尺寸物体作用巨大。另外，考虑到速度因素，作者使用3x3卷积的叠加来代替更大的卷积和。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170405150340329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;hypernet&quot;&gt;HyperNet&lt;/h3&gt;
+&lt;p&gt;Multi-scale的feature map对提升性能非常重要。和以前的方法一样，作者选择最后一层feature map一起前面的2x和4x的两个feature map。作者用2x作为参考尺寸，然后对1x使用线性差值的方法放大，而4x使用pooling的方法缩小，然后concat作为接下来的feature map。&lt;/p&gt;
+
+&lt;h3 id=&quot;网络训练&quot;&gt;网络训练&lt;/h3&gt;
+&lt;p&gt;batch normalization, residual connection, learning rate schedule等不在赘述。&lt;/p&gt;
+
+&lt;h3 id=&quot;faster-r-cnn&quot;&gt;Faster R-CNN&lt;/h3&gt;
+&lt;p&gt;Multi-scale（HyperNet）出来的feature map的channels是512，该feature map称为convf。为了计算方面的考虑，RPN只使用了convf的前128个channels。对于R-CNN，采用了所有的512个channels。对于每个RoI，使用RoI pooling的方法得到了6x6x512的feature map，然后接FC（4096-4096-(21+84)）。COCO数据集的类别是80个，VOC数据集的类别是20类别。&lt;/p&gt;
+
+&lt;h3 id=&quot;结论&quot;&gt;结论&lt;/h3&gt;
+&lt;p&gt;总之作者综合使用了近期深度学习方面的一些进展（concatenated ReLU(C.RuLU), Inception, HyperNet等），对Faster RCNN的特征提取部分进行了改进，从而获得了更快的性能。&lt;/p&gt;
+
+&lt;p&gt;作者指出这些方法和其他网络压缩和量化方法完全独立，即还可以利用这些方法继续加速。作为示例，作者采用了truncated SVD的方法对FC进行压缩，把“4096-4096”变成了“512-4096-512-4096”，并finetune。压缩后速度提升了9.6 FPS，达到了31.3 FPS。精度略有下降：mAP减低了0.9%，达到82.9%。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 +0800</pubDate>
+        
+        <link>/deep/learning/2017-04-05/paper-reading-dl-PVANET.html</link>
+          
+        
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>Object Detection</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>Paper Reading: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</title>
+        <description>&lt;h2 id=&quot;dcgans&quot;&gt;DCGANs&lt;/h2&gt;
+&lt;p&gt;Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks (arxiv 1511.06434)&lt;/p&gt;
+
+&lt;p&gt;和&lt;a href=&quot;http://blog.csdn.net/wulw1990/article/details/68944019&quot;&gt;GAN开上之作: Generative Adversarial Networks（Goodfellow 2014）&lt;/a&gt;不同点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本文采用了CNN作为Generator和Discriminator的实现。&lt;/li&gt;
+  &lt;li&gt;本文更加强调在无监督学习方面的应用，或者更确切地，更关心在未标注的大数据集上学习可用的特征表示。在图片分类问题上展示了GAN方法可以取得和其他无监督方法相同的性能。&lt;/li&gt;
+  &lt;li&gt;本文提出了一些限制(a family of architecture)，用于解决GAN难以训练的问题。&lt;/li&gt;
+  &lt;li&gt;本文还对网络的中间结果进行可视化分析。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;主要内容&quot;&gt;主要内容&lt;/h2&gt;
+&lt;p&gt;其实本篇文章的本质贡献在于训练的一些技巧，作者给出了训练稳定DCGANs的一些guideline：&lt;/p&gt;
+
+&lt;p&gt;1.不要使用Pooling。Discriminator采用带stride的convolution，Generator采用带fractional-strided的convolution。作者说这样可以让网络自己去学习降采样\上采样的方法，效果比用Pooling的好。作者指出，deconvolution是错误的称呼，争取的称呼是convolution with fractional-strided。&lt;/p&gt;
+
+&lt;p&gt;2.BatchNormalize的使用。作者指出加BN是让CNN版本的Generator学习好的关键，但是不能所有的层都加BN，Generator的输出层和Discriminator的输入层不要加BN。&lt;/p&gt;
+
+&lt;p&gt;3.去掉所有的FullConnect层。作者指出去掉fc是一个趋势，比如采用Global Pooling就可以在分类问题上达到state-of-the-art的效果。Global Pooling增加了模型的稳定性，但是损失了收敛的速度。作者提出了一个折中的方法：直接把最高层特征连接到generator的输入和discriminator的输出。对于generator，输入信号（比如长度100的均匀分布采样）先经过fc层，然后reshape成一个4维的tensor，之后就可以用全卷积网络了。而对于discriminator，则是将最后一层的卷积的结果直接拉直输入到sigmoid中（取max？）。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对于非线性层。作者建议：对于generator，所有的层均采用ReLU，除了最后的输出层采用Tanh；对于discriminator，所有的层均采用LeakyReLU。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170401175714235?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;实现细节&quot;&gt;实现细节&lt;/h2&gt;
+&lt;p&gt;作者在三个数据集上进行了实验：Large-scale Scene Understanding (LSUN) (Yu et al., 2015), Imagenet-1k and a newly assembled Faces dataset。&lt;/p&gt;
+
+&lt;p&gt;一些细节：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由于generator最后一层是tanh作为输出，所以需要将输入图片的像素尺度scale到[-1,1]范围内。&lt;/li&gt;
+  &lt;li&gt;batch size: 128&lt;/li&gt;
+  &lt;li&gt;所有的参数初始化: norm(0, 0.02)&lt;/li&gt;
+  &lt;li&gt;LeakyReLU: slope设置为0.2&lt;/li&gt;
+  &lt;li&gt;使用Adam optimizer，而不是momentum&lt;/li&gt;
+  &lt;li&gt;learning rate使用0.0002，而不是0.001&lt;/li&gt;
+  &lt;li&gt;momentum($\beta_1$)使用0.5，而不是0.9&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;可视化&quot;&gt;可视化&lt;/h2&gt;
+&lt;p&gt;作者强调了对隐层进行分析和可视化的重要性。&lt;/p&gt;
+
+&lt;p&gt;1.对隐层进行分析有主意观察有没有memorization的成分。memorization问题是训练GAN需要关心的问题，有点类似ouverfit的概念，就是generator不是真的生成了新的样本而只是记忆了见过的样本而已。如果在在隐层中发现明显的变换（sharp transitions），则可以认为是momorization的信号。&lt;/p&gt;
+
+&lt;p&gt;2.对隐层进行分析有助于理解generator参数空间的架构方式。&lt;/p&gt;
+
+&lt;p&gt;3.对隐层进行分析可以观察是否新的语义变化的引入。这个和memorization问题直接相关，显然如果generator生成的样本有新的语义变化，则说明memorization问题不大，也说明模型确实学到了好的representation。下图展示了generator并不是完全地记忆原有的图像，而是引入了新的语义变化。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170402212814856?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;4.对discriminator进行的feature map进行可视化，可以看到特征学习的效果。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170402214029700?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;5.对z连续性的分析，可以看到一些语义元素的渐变过程。比如下图，调节某个z的参数，可以使得画面从无窗户渐变成为有窗户。&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170402214212180?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;6.作者尝试在generator的feature map中去掉一些语义元素。设计了一个实验，去掉所有的窗户的特征。首先标注一些样本，把图中的窗户的bounding box标注出来，然后在倒数第二层的feature map之上训练了一个logitstic回归。使用回归的结果来把判断为窗户的地方的特征去掉。对比实现结果如下，可以看出虽然这种过滤方法很naive，但是确实可以看到效果，第二行确实把第一行对应的样本中的窗户用其他语义元素替代了。&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170402215126622?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;600&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;展望未来&quot;&gt;展望未来&lt;/h2&gt;
+&lt;p&gt;作者指出，目前的GAN训练中，会出现一个问题：训练轮数多的时候，部分filter会出现振荡。以后会试图解决该问题。&lt;/p&gt;
+
+&lt;p&gt;另外作者还做了一些有趣的实验，比如对z进行操作。下图展示讲生成微笑女人的样本的z减掉生成不微笑女人样本的z，然后在加上不微笑男人的样本的z，得到的新的z作为generator的输入信号，就可以生成微笑的男人的样本。&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170402215703437?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+</description>
+        <pubDate>Sun, 02 Apr 2017 00:00:00 +0800</pubDate>
+        
+        <link>/deep/learning/2017-04-02/paper-reading-dl-DCGANs.html</link>
+          
+        
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>GAN</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>Paper Reading: Generative Adversarial Networks</title>
+        <description>&lt;h2 id=&quot;gan开山之作&quot;&gt;GAN开山之作&lt;/h2&gt;
+&lt;p&gt;Ian J. Goodfellow的工作，GAN开山之作。GAN的基本思路：同时训练两个模型G和D，G的任务是尽量生成让D无法区分的样本，D的任务是尽量区分真实样本，总之就是让G和D在不断相互对抗(GAN)中共同提高，最终的结果是得到一个好的生成型模型。在GAN之前，深度学习在区分型模型方面取得了很大的成功，而在生成型方面几乎没有什么强项。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GAN蕴含了阴阳相生相克的思想，和&lt;a href=&quot;http://news.ifeng.com/a/20170317/50792264_0.shtml&quot;&gt;活体检测攻防战&lt;/a&gt;的“魔高一尺道高一丈”的思想不谋而合。两者都是“警察抓小偷的故事”，“小偷”要尽己所能掌握可以欺骗“警察”的技术，而“警察”则要尽己所能去识别“小偷”的伎俩，在这个过程中，双方的能力都在不断地提高。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;GAN作为一种思想，其使用方式可以覆盖各种模型和算法，可以说是博大精深。让人不禁想到金庸的《射雕英雄传》里面的左右互搏术。左右互搏术是金庸先生小说中周伯通被黄药师困在桃花岛十五年，百无聊赖中，别出心裁，创出来的。初期想法在于左手与右手打架，以自愉自乐，后来被郭靖点醒，明白此门武学之厉害，遂无敌于天下。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;常言道：“心无二用。”又道：“左手画方，右手画圆，则不能成规矩。”这双手互搏之术却正是要人心为二用，一神守内，一神游外，双手使不同武功招数。临敌之时，将这套功夫使出来，分进合击，那便等于以二对一。（见金庸《射雕英雄传》）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;另外，这种两条腿走路的方式，也类似EM算法，以及SML/PCD等。&lt;/p&gt;
+
+&lt;h2 id=&quot;本文方法&quot;&gt;本文方法&lt;/h2&gt;
+&lt;p&gt;本文中，给出的是GAN的一种特殊情况，G采用的以随机噪声为输入的多层神经网络，D也是一个多层神经网络。优雅的是，Goodfellow还提供了论文的源代码（https://github.com/goodfeli/adversarial），不愧是good fellow。&lt;/p&gt;
+
+&lt;p&gt;GAN分成G和D两个部分。G部分可以表示为$G(\boldsymbol{z};\theta_g)$，其中$\boldsymbol{z}$为随机噪声，服从的分布为$p_z(\boldsymbol{z})$。D部分可以表示为$D(\boldsymbol{x};\theta_d)$，其输出结果是一个标量。设G生成的样本符合分布$p_g$，则$D(\boldsymbol{x})$表示输入$\boldsymbol{x}$来自真实样本（而非$p_g$）的概率。优化的目标：&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170401115027469?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;该目标函数描述了一个minimax game（“警察抓小偷”的故事、“左右搏击术”以及“阴阳相生相克”的思想）。&lt;/p&gt;
+
+&lt;p&gt;到此，这篇文章基本就介绍差不多了。。。后面是一些理论分析和实现细节。&lt;/p&gt;
+&lt;h2 id=&quot;实现细节&quot;&gt;实现细节&lt;/h2&gt;
+
+&lt;p&gt;1.每次更新G后，都把D训练好，在计算上是不显示的。所以作者采用了k+1的方式，每一轮迭代中，D训练k步，G训练1步。这样如果G的更新速度足够慢，D就一定会收敛到最好的分类性能。&lt;/p&gt;
+
+&lt;p&gt;2.刚开始时由于G生成的数据会很“假”，所以D会很容易分出所有的样本，这样导致接下来训练G的loss是0，从而无法继续学习。解决方法是修改loss function，从$\log(1-D(G(\boldsymbol{z})))$改为$\log(D(G(\boldsymbol{z})))$。&lt;/p&gt;
+
+&lt;p&gt;3.下图是GAN的训练过程展示。其中z表示输入的随机噪声，z上面的箭头表示G的生成过程，生成的样本满足绿色实线的分布。黑色虚线表示实际样本的分布情况。蓝色虚线表示G的参数更新过程，使得最后G产生的样本分布和实际样本的分布一致。&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170401134009392?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;理论证明部分略过。。。最后作者给出了一些可能将来做的点。&lt;/p&gt;
+&lt;h2 id=&quot;未来展望&quot;&gt;未来展望&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;A conditional generative model $p(x&lt;/td&gt;
+          &lt;td&gt;c)$&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Learned approximate inference: predict z given x.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;$p(x_S&lt;/td&gt;
+          &lt;td&gt;x̸_S)$, a family of conditional models that share parameters&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Semi-supervised learning&lt;/li&gt;
+  &lt;li&gt;Efficiency improvements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;效果展示&quot;&gt;效果展示&lt;/h2&gt;
+
+&lt;p&gt;生成效果展示：a) MNIST b) TFD c) CIFAR-10 (fully connected model) d) CIFAR-10 (convolutional discriminator and “deconvolutional” generator)&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://img.blog.csdn.net/20170401140344153?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+</description>
+        <pubDate>Sat, 01 Apr 2017 00:00:00 +0800</pubDate>
+        
+        <link>/deep/learning/2017-04-01/paper-reading-dl-first-GAN.html</link>
+          
+        
+            <category>Paper Reading</category>
+        
+            <category>Deep Learning</category>
+        
+            <category>GAN</category>
+        
+          
+        
+            <category>deep</category>
+        
+            <category>learning</category>
+        
+          
+      </item>
+    
+    <item>
+        <title>一点碎碎念而已</title>
+        <description>&lt;p&gt;下午4点半，做完公司的几件事情，匆忙往住处赶。&lt;/p&gt;
+
+&lt;p&gt;弟弟回家的火车是6点半。&lt;/p&gt;
+
+&lt;p&gt;4个小时前，中午公司大家开始排队打饭的时候，我也是同样的背上书包往住处去，和弟弟一起做了午饭。 交待他晚上在车上不要亏待自己，买车上的盒饭吃，虽然不太好吃，但总比零食好。 他说他在车上就不想吃饭（他一直胃不太好）。我说，那这样，下午我早点回来，吃完饭再走。结果在公司不小心就回得迟了。 其实，公司那个点也没什么大不了的事情，所以有点自责。又劝他，你以前没怎么坐火车，在火车上吃饭 和在长途车上吃饭不一样的，不会觉得胃不舒服的，一定记得买热的饭菜吃。包里带的饼干什么的， 不能当饭吃。&lt;/p&gt;
+
+&lt;p&gt;一起收拾东西，我总想找点东西给他带着。找着一个卡西欧得计算器，是我以前考研时用的，我说这个送你吧， 我们考研时候都用的这个，计算能力蛮强的，你将来说不定用得着。又拿了两盒果汁放他包里。 又帮他收拾手提袋。又检查一遍屋子，担心什么落下了。又问了几遍，你确定东西都带了吧，没落下什么吧， 手机充电器，充电宝带了吧。为什么会这样呢？说不清楚，大概只是想拖延一下时间吧，分别真的是一件让人惆怅的事情。 想起来，每次放完假，离家去学校，爸妈总是要问，这个要不要带，那个要不要带。 有时候觉得挺啰嗦的。现在似乎能够明白，其实啰嗦只不过是牵挂和不舍的表达而已。 那时候,我觉得我懂，但不是真正得听懂。&lt;/p&gt;
+
+&lt;p&gt;以前的情形和现在不太一样。&lt;/p&gt;
+
+&lt;p&gt;一是每次和弟弟分别都是在家里，有父母在，心理上，这种不舍没有这么强烈。 二是，以前自己是学生，总觉得自己还是孩子，离家回家什么的，感觉蛮平常的。而现在工作了，家大概不是能想回就回了， 对亲人分别的感觉会分外强烈。“当时只道是寻常”。看《人间世》的纪录片，特别有感触。人真的太脆弱了。 近几年，爸爸身体不太好，觉得妈妈也苍老了很多，白头发很多，皮肤也很多皱纹。 弟弟从小一直胃不太好，而我自己今年身体也不大乐观。 有的时候，莫名其妙的，会觉得有点害怕，害怕将来陪伴家人的机会越来越少，越来越地被时间和现实推着往前走。 从小，感觉身上有股英雄主义的情怀。觉得一大家子的人都很爱我， 觉得世间掌握在自己手里，将来长大了，会加倍地爱他们，保护他们永远不受伤害。 而现在，有时候会想起回家了要去看看爷爷奶奶，才会忽然想起，他们早已不再人世了。 可是，很多记忆的画面为什么还会如此清晰？我这些年到底做了什么？为什么仿佛只是一场梦？ 这个时候，总觉得自己渺小到不过是世间的一粒尘埃，就像那宝玉，也不过是大荒山上的一块顽石而已。&lt;/p&gt;
+
+&lt;p&gt;时光他老人家的脚步永远不会慢下来。即使我愿用一切去换岁月长流。&lt;/p&gt;
+
+&lt;p&gt;去西藏的路上，常常会想，人们为什么需要宗教？我想大概是因为人们总有无处安放的青春和永远无法偿还的爱。 上苍是否存在，我们不从得知。但是我们可以做的是，用我们的一生，尽己所能，去爱他们。&lt;/p&gt;
+
+&lt;div style=&quot;text-align: right&quot;&gt; 2016年08月15日 &lt;/div&gt;
+&lt;div style=&quot;text-align: right&quot;&gt; 东王庄小区 &lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 16 Aug 2016 00:00:00 +0800</pubDate>
+        
+        <link>/posts/2016-08-16/life-farewell.html</link>
+          
+        
+            <category>生活</category>
+        
+            <category>离别</category>
         
           
         
@@ -367,64 +663,202 @@
       </item>
     
     <item>
-        <title>Testing Readability with a Bunch of Text</title>
-        <description>&lt;p&gt;Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.&lt;/p&gt;
+        <title>西藏自驾游之路线与行程</title>
+        <description>&lt;center&gt;
+    &lt;img src=&quot;http://7xkiab.com1.z0.glb.clouddn.com/tibet_altitude.JPG&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
 
-&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
+&lt;h2 id=&quot;总体路线&quot;&gt;总体路线&lt;/h2&gt;
 
-&lt;h2 id=&quot;cupidatat-90s-lo-fi-authentic-try-hard&quot;&gt;Cupidatat 90’s lo-fi authentic try-hard&lt;/h2&gt;
+&lt;h3 id=&quot;滇藏进青藏出&quot;&gt;滇藏进，青藏出&lt;/h3&gt;
 
-&lt;p&gt;In pug Portland incididunt mlkshk put a bird on it vinyl quinoa. Terry Richardson shabby chic +1, scenester Tonx excepteur tempor fugiat voluptate fingerstache aliquip nisi next level. Farm-to-table hashtag Truffaut, Odd Future ex meggings gentrify single-origin coffee try-hard 90’s.&lt;/p&gt;
+&lt;p&gt;昆明-&amp;gt;拉萨-&amp;gt;西宁-&amp;gt;西安&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Sartorial hoodie&lt;/li&gt;
-  &lt;li&gt;Labore viral forage&lt;/li&gt;
-  &lt;li&gt;Tote bag selvage&lt;/li&gt;
-  &lt;li&gt;DIY exercitation et id ugh tumblr church-key&lt;/li&gt;
-&lt;/ul&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://7xkiab.com1.z0.glb.clouddn.com/tibet_global_path.jpg&quot; width=&quot;300&quot; /&gt;
+&lt;/center&gt;
 
-&lt;p&gt;Incididunt umami sriracha, ethical fugiat VHS ex assumenda yr irure direct trade. Marfa Truffaut bicycle rights, kitsch placeat Etsy kogi asymmetrical. Beard locavore flexitarian, kitsch photo booth hoodie plaid ethical readymade leggings yr.&lt;/p&gt;
+&lt;h3 id=&quot;青藏线-路况最好&quot;&gt;青藏线 路况最好&lt;/h3&gt;
+&lt;p&gt;青藏公路始于西宁，止于拉萨。青藏公路时世界上海拔最高的公路之一，也是目前通往西藏里程最短，路况最好的且又最安全的公路。走这条线进藏，基本所有车型都可以完成，而且一年四季都可以通行。&lt;/p&gt;
 
-&lt;p&gt;Aesthetic odio dolore, meggings disrupt qui readymade stumptown brunch Terry Richardson pour-over gluten-free. Banksy american apparel in selfies, biodiesel flexitarian organic meh wolf quinoa gentrify banjo kogi. Readymade tofu ex, scenester dolor umami fingerstache occaecat fashion axe Carles jean shorts minim. Keffiyeh fashion axe nisi Godard mlkshk dolore. Lomo you probably haven’t heard of them eu non, Odd Future Truffaut pug keytar meggings McSweeney’s Pinterest cred. Etsy literally aute esse, eu bicycle rights qui meggings fanny pack. Gentrify leggings pug flannel duis.&lt;/p&gt;
+&lt;p&gt;走青藏线入藏，一般经西安、兰州后到西宁，然后在正式开始踏上青藏线。&lt;/p&gt;
 
-&lt;h2 id=&quot;forage-occaecat-cardigan-qui&quot;&gt;Forage occaecat cardigan qui&lt;/h2&gt;
+&lt;p&gt;穿过高山、大河、草原：&lt;/p&gt;
 
-&lt;p&gt;Fashion axe hella gastropub lo-fi kogi 90’s aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole.&lt;/p&gt;
+&lt;p&gt;公路起自青海西宁，到达青海省第二大城市格尔木市之后，要翻越四座大山：昆仑上（4700米）、风火上（4800米）、唐古拉山（垭口海拔5150米）和念青唐古拉山；&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;跨过三条大河：通天河、沱沱河和楚玛尔河，平均海拔4500米，其中西藏境内544公里。&lt;/p&gt;
 
-&lt;p&gt;Tote bag asymmetrical elit sunt. Occaecat authentic Marfa, hella McSweeney’s next level irure veniam master cleanse. Sed hoodie letterpress artisan wolf leggings, 3 wolf moon commodo ullamco. Anim occupy ea labore Terry Richardson. Tofu ex master cleanse in whatever pitchfork banh mi, occupy fugiat fanny pack Austin authentic. Magna fugiat 3 wolf moon, labore McSweeney’s sustainable vero consectetur. Gluten-free disrupt enim, aesthetic fugiat jean shorts trust fund keffiyeh magna try-hard.&lt;/p&gt;
+&lt;p&gt;穿过藏北羌塘草原，才能到达西藏自治区首府拉萨市。&lt;/p&gt;
 
-&lt;h2 id=&quot;hoodie-duis&quot;&gt;Hoodie Duis&lt;/h2&gt;
+&lt;center&gt;
+    &lt;img src=&quot;http://7xkiab.com1.z0.glb.clouddn.com/tibet_qingzang_path.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
 
-&lt;p&gt;Actually salvia consectetur, hoodie duis lomo YOLO sunt sriracha. Aute pop-up brunch farm-to-table odio, salvia irure occaecat. Sriracha small batch literally skateboard. Echo Park nihil hoodie, aliquip forage artisan laboris. Trust fund reprehenderit nulla locavore. Stumptown raw denim kitsch, keffiyeh nulla twee dreamcatcher fanny pack ullamco 90’s pop-up est culpa farm-to-table. Selfies 8-bit do pug odio.&lt;/p&gt;
+&lt;h3 id=&quot;滇藏线-风景最美&quot;&gt;滇藏线 风景最美&lt;/h3&gt;
 
-&lt;h3 id=&quot;thundercats-ho&quot;&gt;Thundercats Ho!&lt;/h3&gt;
+&lt;p&gt;滇藏线是五条进藏路线中风景最美的一条。&lt;/p&gt;
 
-&lt;p&gt;Fingerstache thundercats Williamsburg, deep v scenester Banksy ennui vinyl selfies mollit biodiesel duis odio pop-up. Banksy 3 wolf moon try-hard, sapiente enim stumptown deep v ad letterpress. Squid beard brunch, exercitation raw denim yr sint direct trade. Raw denim narwhal id, flannel DIY McSweeney’s seitan. Letterpress artisan bespoke accusamus, meggings laboris consequat Truffaut qui in seitan. Sustainable cornhole Schlitz, twee Cosby sweater banh mi deep v forage letterpress flannel whatever keffiyeh. Sartorial cred irure, semiotics ethical sed blue bottle nihil letterpress.&lt;/p&gt;
+&lt;p&gt;滇藏公路是指：南起云南下关，经剑川、中甸、德钦，北达西藏芒康的公路，全长714公里。&lt;/p&gt;
 
-&lt;p&gt;Occupy et selvage squid, pug brunch blog nesciunt hashtag mumblecore skateboard yr kogi. Ugh small batch swag four loko. Fap post-ironic qui tote bag farm-to-table american apparel scenester keffiyeh vero, swag non pour-over gentrify authentic pitchfork. Schlitz scenester lo-fi voluptate, tote bag irony bicycle rights pariatur vero Vice freegan wayfarers exercitation nisi shoreditch. Chambray tofu vero sed. Street art swag literally leggings, Cosby sweater mixtape PBR lomo Banksy non in pitchfork ennui McSweeney’s selfies. Odd Future Banksy non authentic.&lt;/p&gt;
+&lt;p&gt;而滇藏路线一般是指从昆明到拉萨的整个路线，全长2317公里。&lt;/p&gt;
 
-&lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;
+&lt;p&gt;滇藏公路从丽江、中甸到德钦，海拔从2400逐步升到3300，人员相对容易适应。路上万一有队员发生严重的高反，也可以有机会撤下来。&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://7xkiab.com1.z0.glb.clouddn.com/tibet_dianzang_path.jpg&quot; width=&quot;500&quot; /&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;行程安排&quot;&gt;行程安排&lt;/h2&gt;
+&lt;p&gt;6月10日出发，6月25日返回，共计16天。&lt;/p&gt;
+
+&lt;h3 id=&quot;6月10日-昆明长水机场&quot;&gt;6月10日 昆明长水机场&lt;/h3&gt;
+&lt;p&gt;行程：直接坐飞机过来。&lt;/p&gt;
+
+&lt;p&gt;特点：集合，取车，采购，补给。&lt;/p&gt;
+
+&lt;p&gt;住宿：昆明市区&lt;/p&gt;
+
+&lt;p&gt;海拔：昆明市区海拔约2000米&lt;/p&gt;
+
+&lt;p&gt;注意：购买机票时间，最好在下午16点前在昆明长水机场集合。以留下取车、采购的时间。&lt;/p&gt;
+
+&lt;h3 id=&quot;6月11日-大理-丽江-虎跳峡&quot;&gt;6月11日	大理 丽江 虎跳峡&lt;/h3&gt;
+&lt;p&gt;行程：昆明（328km）―大理（177km）―丽江（87km）―虎跳峡（全天592km）&lt;/p&gt;
+
+&lt;p&gt;住宿：中虎跳，如果不好找，直接开到香格里拉好了。&lt;/p&gt;
+
+&lt;p&gt;海拔：虎跳峡海拔约2000米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月12日-香格里拉-飞来寺梅里雪山&quot;&gt;6月12日 香格里拉 飞来寺（梅里雪山）&lt;/h3&gt;
+&lt;p&gt;行程：虎跳峡（90km）―香格里拉（84km）―奔子栏（105km，经金沙江大拐弯，翻白马雪山）―德钦（13km）―飞来寺（全天292km）&lt;/p&gt;
+
+&lt;p&gt;特点：飞来寺旁边就是梅里雪山&lt;/p&gt;
+
+&lt;p&gt;住宿：飞来寺，最好能找一个适合看梅里雪上的地方&lt;/p&gt;
+
+&lt;p&gt;海拔：飞来寺海拔3400米，梅里雪上海拔6740米&lt;/p&gt;
+
+&lt;p&gt;注意：首次住在3000+海拔，如果有队员出现较严重的高反，应该考虑撤出。&lt;/p&gt;
+
+&lt;h3 id=&quot;6月13日-芒康-左贡&quot;&gt;6月13日 芒康 左贡&lt;/h3&gt;
+&lt;p&gt;行程：飞来寺（203km）―芒康（158km，经澜沧江，翻拉乌山，脚巴山，东达拉山）―左贡（全天361km）&lt;/p&gt;
+
+&lt;p&gt;住宿：左贡县城&lt;/p&gt;
+
+&lt;p&gt;海拔：左贡3760米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月14日-邦达-八宿-然乌-波密&quot;&gt;6月14日 邦达 八宿 然乌 波密&lt;/h3&gt;
+&lt;p&gt;行程：左贡（107km）―邦达（91km，经怒江，翻业拉山）―八宿（90km）―然乌（127km，经米堆冰川）―波密（全天415km）&lt;/p&gt;
+
+&lt;p&gt;住宿：波密县城&lt;/p&gt;
+
+&lt;p&gt;海拔：波密海拔2700米，波密地区平均海拔4200米。&lt;/p&gt;
+
+&lt;h3 id=&quot;6月15日-通麦-林芝&quot;&gt;6月15日 通麦 林芝&lt;/h3&gt;
+&lt;p&gt;行程：波密（75km）―通麦（15km，经易贡藏布江）―排龙（47km）―鲁朗（97km）―八一（全天234km）&lt;/p&gt;
+
+&lt;p&gt;住宿：林芝县城&lt;/p&gt;
+
+&lt;p&gt;海拔：林芝县城平均海拔平均3000米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月16日-林芝&quot;&gt;6月16日 林芝&lt;/h3&gt;
+&lt;p&gt;行程：林芝海拔不太高，可以在此休整一下。而且这里有不少值得去的地方，大峡谷啥的。&lt;/p&gt;
+
+&lt;p&gt;住宿：林芝县城&lt;/p&gt;
+
+&lt;p&gt;海拔：林芝县城平均海拔平均3000米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月17日-林芝-拉萨&quot;&gt;6月17日 林芝-&amp;gt;拉萨&lt;/h3&gt;
+&lt;p&gt;行程： 12点前启程去拉萨，预计20：00点到达。八一（414km，经工布江达，翻米拉山）―拉萨 （全天414km） 有限速，预计8小时以上。&lt;/p&gt;
+
+&lt;p&gt;住宿：拉萨市区&lt;/p&gt;
+
+&lt;p&gt;海拔：拉萨3600+米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月18日-拉萨&quot;&gt;6月18日 拉萨&lt;/h3&gt;
+&lt;p&gt;行程：拉萨市区&lt;/p&gt;
+
+&lt;p&gt;住宿：拉萨市区&lt;/p&gt;
+
+&lt;p&gt;海拔：拉萨3600+米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月19日-拉萨&quot;&gt;6月19日 拉萨&lt;/h3&gt;
+&lt;p&gt;行程：拉萨市区&lt;/p&gt;
+
+&lt;p&gt;住宿：拉萨市区&lt;/p&gt;
+
+&lt;p&gt;海拔：拉萨3600+米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月20日-羊八井当雄纳木错那曲&quot;&gt;6月20日 羊八井、当雄、纳木错、那曲&lt;/h3&gt;
+&lt;p&gt;行程：拉萨- 那曲  320KM  途径：羊八井、当雄县、纳木错&lt;/p&gt;
+
+&lt;p&gt;住宿：晚上在纳木错露营，此处注意防寒保暖。或者住那曲。&lt;/p&gt;
+
+&lt;p&gt;注意：不要激动，纳木错，海拔4700，非常容易高反！！！这里夜里会比较冷，务必注意保暖！！！高反+感冒会比较危险！！！另外考虑接下来两天开车时间较长，驾驶员注意休息！！！&lt;/p&gt;
+
+&lt;p&gt;海拔：纳木错海拔4700，那曲平均海拔4500&lt;/p&gt;
+
+&lt;h3 id=&quot;6月21日-格尔木&quot;&gt;6月21日 格尔木&lt;/h3&gt;
+&lt;p&gt;行程：那曲- 格尔木 全程830KM&lt;/p&gt;
+
+&lt;p&gt;特点：今天预计有14个小时以上在路上！！！途径唐古拉山、昆仑山，海拔太高，不适宜过夜，快速路过吧。路上应该会看到开阔壮丽的景观。&lt;/p&gt;
+
+&lt;p&gt;住宿：格尔木市区&lt;/p&gt;
+
+&lt;p&gt;海拔：格尔木2780米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月22日-青海湖-西宁&quot;&gt;6月22日 青海湖 西宁&lt;/h3&gt;
+&lt;p&gt;行程：格尔木-&amp;gt;西宁 800+KM&lt;/p&gt;
+
+&lt;p&gt;特点：途径青海湖，可以考虑露宿。&lt;/p&gt;
+
+&lt;p&gt;住宿：露宿青海湖。或者住西宁。&lt;/p&gt;
+
+&lt;p&gt;海拔：西宁2300米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月23日-兰州&quot;&gt;6月23日 兰州&lt;/h3&gt;
+&lt;p&gt;行程：西宁到兰州约三个小时车程，早上出发，中午到达。&lt;/p&gt;
+
+&lt;p&gt;特点：去兰州大学（何康姐夫在那里）蹭兰州拉面！&lt;/p&gt;
+
+&lt;p&gt;住宿：兰州。&lt;/p&gt;
+
+&lt;p&gt;海拔：兰州市区海拔约1500米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月24日-西安&quot;&gt;6月24日 西安&lt;/h3&gt;
+&lt;p&gt;行程：兰州到西安650KM，预计得8个小时以上。如果想去看兵马俑：可以考虑，从兰州直奔兵马俑（下午6点关门），预计8个小时。然后晚上逛逛西安市区。&lt;/p&gt;
+
+&lt;p&gt;住宿：西安市区&lt;/p&gt;
+
+&lt;p&gt;注意：这一天作为备份。按时到达了，就在西安玩一天。否则，直奔机场。因此买返程票注意，不要买太早的票。假设8点从兰州出发，16点到机场，需要买18点以后的票，这样才不会很匆忙。&lt;/p&gt;
+
+&lt;p&gt;海拔：约500米&lt;/p&gt;
+
+&lt;h3 id=&quot;6月25日-西安咸阳机场&quot;&gt;6月25日 西安咸阳机场&lt;/h3&gt;
+&lt;p&gt;行程：买18点后的机票，14点之前需要从市区出发（留出4小时，考虑还车和等飞机的时间）。咸阳机场还车。等飞机。返程。&lt;/p&gt;
+
+&lt;p&gt;海拔：约500米&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://i.WoTuLa.com/note.png?name=填写姓名&amp;amp;say=这里填写您想说的内容。&quot; width=&quot;400&quot; /&gt;
+&lt;/center&gt;
+
 </description>
-        <pubDate>Thu, 10 Nov 2016 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 10 Apr 2016 00:00:00 +0800</pubDate>
         
-        <link>/posts/2016-11-10/readability-post.html</link>
+        <link>/life/2016-04-10/travel-tibet_driving_travel_path.html</link>
           
         
-            <category>sample post</category>
+            <category>生活</category>
         
-            <category>readability</category>
+            <category>旅行</category>
         
-            <category>test</category>
-        
-            <category>intro</category>
+            <category>西藏</category>
         
           
         
-            <category>posts</category>
+            <category>life</category>
         
           
       </item>

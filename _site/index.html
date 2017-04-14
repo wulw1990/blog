@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Clean+Simple Theme">
 <meta property="og:description" content="Something...">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:url" content="http://localhost:8000/">
 <meta property="og:site_name" content="Clean+Simple Theme">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/">
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Clean+Simple Theme Feed">
+<link rel="canonical" href="http://localhost:8000/">
+<link href="http://localhost:8000/feed.xml" type="application/atom+xml" rel="alternate" title="Clean+Simple Theme Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -38,14 +38,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="http://localhost:8000/assets/css/main.css">
 <!-- Webfonts -->
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
 
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-<script src="http://localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+<script src="http://localhost:8000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 
 
@@ -82,219 +82,28 @@
     <!-- POST TITLE -->
     <header>
         <h1 class="entry-title">
-            <a href="http://localhost:4000/posts/2016-11-20/sample-post.html" rel="bookmark" title="Sample Post" itemprop="url">Sample Post</a>
+            <a href="http://localhost:8000/deep/learning/2017-04-13/paper-reading-dl-watch-move.html" rel="bookmark" title="CVPR2017: Learning Features by Watching Objects Move" itemprop="url">CVPR2017: Learning Features by Watching Objects Move</a>
         </h1>
     </header>
     
     <!-- POST CONTENT -->
     <div class="entry-content">
-        <p>Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.</p>
+        <p>其实做法非常简单，就是利用视频的光流信息来做前景分割，然后用模型去学习前景分割的结果。结果发现，虽有利用光流信息得到的分割结果噪声很大（pseudo ground truth），但是训练出来的模型确得到很好的特征，可以用于物体检测等。</p>
 
-<h1 id="heading-1">Heading 1</h1>
+<p>本文最值得学习的是写作的手法，虽然方法非常简单，但是写作上比较有水平。</p>
 
-<h2 id="heading-2">Heading 2</h2>
+<p>1.在Introduction部分，把这种利用间接非监督任务（pretext task）来学习好的特征的方法进行了归纳。作者归纳了以前的四种pretext task：Example pretext tasks include reconstruct-ing the input [3, 18, 41], predicting the pixels of the next frame in a video stream [15], metric learning on object track endpoints [43], temporally ordering shuffled frames from a video [26], and spatially ordering patches from a static im- age [6, 27]. 
+而本文是一种新的pretext task。</p>
 
-<h3 id="heading-3">Heading 3</h3>
+<p>2.展开讲自己的方法之前，先讲Evaluating Feature Representations的方法。指出了这个问题的重要性，以及以前评估方法的局限性，并提出了自己的三种更general的评估方法。有点测试先行的意思。</p>
 
-<h4 id="heading-4">Heading 4</h4>
+<p>3.对比实验。首先直接使用ImageNet的语义分割模型（无label分割），说明无label分类的模型确实学到可可以用于其他任务的特征，而本文则是无监督的方式得到的类似特征。</p>
 
-<h5 id="heading-5">Heading 5</h5>
-
-<h6 id="heading-6">Heading 6</h6>
-
-<h3 id="body-text">Body text</h3>
-
-<p>Lorem ipsum dolor sit amet, test link adipiscing elit. <strong>This is strong</strong>. Nullam dignissim convallis est. Quisque aliquam.</p>
-
-<p class="image-right"><img src="http://localhost:4000/images/3953273590_704e3899d5_m.jpg" alt="Smithsonian Image" /></p>
-
-<p><em>This is emphasized</em>. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H<sub>2</sub>O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times <cite>(That’s a citation)</cite>. <u>Underline</u>. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-
-<p>HTML and <abbr title="cascading stylesheets">CSS<abbr> are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</abbr></abbr></p>
-
-<h3 id="blockquotes">Blockquotes</h3>
-
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.</p>
-</blockquote>
-
-<h2 id="list-types">List Types</h2>
-
-<h3 id="ordered-lists">Ordered Lists</h3>
-
-<ol>
-  <li>Item one
-    <ol>
-      <li>sub item one</li>
-      <li>sub item two</li>
-      <li>sub item three</li>
-    </ol>
-  </li>
-  <li>Item two</li>
-</ol>
-
-<h3 id="unordered-lists">Unordered Lists</h3>
-
-<ul>
-  <li>Item one</li>
-  <li>Item two</li>
-  <li>Item three</li>
-</ul>
-
-<h2 id="tables">Tables</h2>
-
-<table rules="groups">
-  <thead>
-    <tr>
-      <th style="text-align: left">Header1</th>
-      <th style="text-align: center">Header2</th>
-      <th style="text-align: right">Header3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">cell1</td>
-      <td style="text-align: center">cell2</td>
-      <td style="text-align: right">cell3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
-      <td style="text-align: right">cell6</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td style="text-align: left">cell1</td>
-      <td style="text-align: center">cell2</td>
-      <td style="text-align: right">cell3</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
-      <td style="text-align: right">cell6</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td style="text-align: left">Foot1</td>
-      <td style="text-align: center">Foot2</td>
-      <td style="text-align: right">Foot3</td>
-    </tr>
-  </tfoot>
-</table>
-
-<h2 id="code-snippets">Code Snippets</h2>
-
-<p>Syntax highlighting via Rouge</p>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nf">#container</span> <span class="p">{</span>
-  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<p>Non Pygments code example</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div id="awesome"&gt;
-    &lt;p&gt;This is great isn't it?&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-</div>
-
-<h2 id="buttons">Buttons</h2>
-
-<p>Make any link standout more when applying the <code class="highlighter-rouge">.btn</code> class.</p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-success"</span><span class="nt">&gt;</span>Success Button<span class="nt">&lt;/a&gt;</span>
-</code></pre>
-</div>
-
-<div><a href="#" class="btn">Primary Button</a></div>
-<div><a href="#" class="btn btn-success">Success Button</a></div>
-<div><a href="#" class="btn btn-warning">Warning Button</a></div>
-<div><a href="#" class="btn btn-danger">Danger Button</a></div>
-<div><a href="#" class="btn btn-info">Info Button</a></div>
-
-    </div>
-    
-    <!--- DIVIDING LINE -->
-    <hr>
-    
-    <!-- POST TAGS -->
-    <div class="inline-tags">
-        <span>
-        
-            <a href="/tags/#sample post">#sample post&nbsp;&nbsp;&nbsp;</a>
-        
-        </span>
-    </div>
-    
-    <br>
-    
-    <!-- POST DATE -->
-    <div class="post-date">
-        <span class="entry-date date published updated">
-            <time datetime="2016-11-20T00:00:00-05:00">
-                <a href="http://localhost:4000/posts/2016-11-20/sample-post.html">November 20, 2016</a>
-            </time>
-        </span>
-    </div>
-    
-</article>
-
-<article>
-    <!-- POST TITLE -->
-    <header>
-        <h1 class="entry-title">
-            <a href="http://localhost:4000/posts/2016-11-19/image-post.html" rel="bookmark" title="Image Post" itemprop="url">Image Post</a>
-        </h1>
-    </header>
-    
-    <!-- POST CONTENT -->
-    <div class="entry-content">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<script>window.jQuery || document.write('<script src="_/js/libs/jquery-1.9.1.min.js"><\/script>')</script>
-
-<p>Lorem ipsum dolor sit amet, interdum fermentum arcu, ipsum venenatis curabitur dis. Morbi imperdiet pharetra adipiscing posuere morbi. Aliquam dictum ut nisl wisi quis fermentum, quam lectus amet, eu congue tincidunt. Eget sollicitudin amet lectus at duis vitae, sed id vitae, amet ultricies, eget proin id. Gravida cras consequat, sem elit suscipit, volutpat dui congue, quisque amet ac sit ornare aliquet, sem nec eget felis varius lacus metus. Eros eget viverra habitasse non vitae, fusce euismod commodo pellentesque nonummy sit, ultricies ullamcorper ut neque, egestas sem quisque hendrerit.</p>
+<p>其他方面没有太多好说的。使用光流得到pseudo ground truth的方法都是既有的，而且分割的噪声是更大的，但是本文证明了噪声对特征学习影响不大。</p>
 
 <center>
-    <div class="photoset-grid-custom" data-layout="213">
-        <img src="/images/2016-11-19/abstract-1.jpg" />
-        <img src="/images/2016-11-19/abstract-2.jpg" />
-        <img src="/images/2016-11-19/abstract-3.jpg" />
-        <img src="/images/2016-11-19/abstract-4.jpg" />
-        <img src="/images/2016-11-19/abstract-5.jpg" />
-        <img src="/images/2016-11-19/abstract-6.jpg" />
-    </div>
+    <img src="http://7xkiab.com1.z0.glb.clouddn.com/blog/image/2017-04-13-watch-move.jpg" width="400" />
 </center>
-
-<p>Sit mollis consectetuer tempor in, sociosqu mi in ornare et, placerat in eget ac, praesent pellentesque, mollis est natoque. Quis quis, ac ac pretium sed fusce sollicitudin cursus, magna vitae placerat tincidunt sed dictumst, nullam rutrum pharetra consectetuer. Erat libero odio venenatis, et id ac ultrices convallis, ac iaculis nec vestibulum etiam nec metus, integer velit dictum. Inceptos laoreet at wisi libero dolor, id scelerisque vulputate a amet amet dapibus, at et vitae nec aliquam, fringilla vitae quam. Mauris felis nec sagittis posuere mauris, penatibus ullamcorper, tristique aliquet, vel posuere class placerat. Ornare et non magnis fusce.</p>
-
-<script src="/assets/js/jquery.photoset-grid.js"></script>
-
-<script type="text/javascript">
-    $('.photoset-grid-custom').photosetGrid({
-    // Set the gutter between columns and rows
-    gutter: '5px',
-  
-    // Wrap the images in links
-    highresLinks: true,
-  
-    // Asign a common rel attribute
-    rel: 'print-gallery',
-
-    onInit: function(){},
-    
-    onComplete: function(){
-        // Show the grid after it renders
-        $('.photoset-grid-custom').attr('style', '');
-    }
-});
-</script>
 
 
     </div>
@@ -306,7 +115,11 @@
     <div class="inline-tags">
         <span>
         
-            <a href="/tags/#sample post">#sample post&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Paper Reading">#Paper Reading&nbsp;&nbsp;&nbsp;</a>
+        
+            <a href="/tags/#Deep Learning">#Deep Learning&nbsp;&nbsp;&nbsp;</a>
+        
+            <a href="/tags/#Unsupervised Learning">#Unsupervised Learning&nbsp;&nbsp;&nbsp;</a>
         
         </span>
     </div>
@@ -316,8 +129,8 @@
     <!-- POST DATE -->
     <div class="post-date">
         <span class="entry-date date published updated">
-            <time datetime="2016-11-19T00:00:00-05:00">
-                <a href="http://localhost:4000/posts/2016-11-19/image-post.html">November 19, 2016</a>
+            <time datetime="2017-04-13T00:00:00+08:00">
+                <a href="http://localhost:8000/deep/learning/2017-04-13/paper-reading-dl-watch-move.html">April 13, 2017</a>
             </time>
         </span>
     </div>
@@ -328,115 +141,134 @@
     <!-- POST TITLE -->
     <header>
         <h1 class="entry-title">
-            <a href="http://localhost:4000/posts/2016-11-18/code-highlighting-post.html" rel="bookmark" title="Syntax Highlighting Post" itemprop="url">Syntax Highlighting Post</a>
+            <a href="http://localhost:8000/deep/learning/2017-04-11/paper-reading-dl-res-next.html" rel="bookmark" title="Paper Reading: ResNext--Aggregated Residual Transformations for Deep Neural Networks" itemprop="url">Paper Reading: ResNext--Aggregated Residual Transformations for Deep Neural Networks</a>
         </h1>
     </header>
     
     <!-- POST CONTENT -->
     <div class="entry-content">
-        <p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+        <h2 id="简介">简介</h2>
+<p>可以认为是ResNet的升级版。原理非常简单，一张图即可搞明白：</p>
 
-<h3 id="gfm-code-blocks">GFM Code Blocks</h3>
+<center>
+    <img src="http://img.blog.csdn.net/20170411142838359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="300" />
+</center>
 
-<p>GitHub Flavored Markdown <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a> are supported. To modify styling and highlight colors edit <code class="highlighter-rouge">/_sass/syntax.scss</code>.</p>
+<p>这种思想可以有三种实现形式：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nf">#container</span> <span class="p">{</span>
-  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<center>
+    <img src="http://img.blog.csdn.net/20170411143026219?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" />
+</center>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.highlight</span> <span class="p">{</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$monospace</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$type-size-7</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<p>作者实验发现，三种形式效果差不多，考虑计算性能，选择第三种。</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-  {% if page.previous %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-  {% if page.next %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span>
-</code></pre>
-</div>
+<p>作者提出一个概念：把上述building block中除了short-cut以外的支路数量称为cardinality（基数）。作者把cardinality和depth、width两个概念并列，并在实验中证明增加cardinality比增加depth或width更加有效。</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td class="code"><pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-  {% if page.previous %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-  {% if page.next %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<center>
+    <img src="http://img.blog.csdn.net/20170411143348329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="350" />
+</center>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">class</span> <span class="nc">TagIndex</span> <span class="o">&lt;</span> <span class="no">Page</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
-      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
-      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
-      <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
-      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">'index.html'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">'_layouts'</span><span class="p">),</span> <span class="s1">'tag_index.html'</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag</span>
-      <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_prefix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'Tagged: '</span>
-      <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_suffix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'&amp;#8211;'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">"</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"An archive of posts tagged </span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">."</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>
-</div>
+<p>在FLOP同样增加到2倍的情况下，增加cardinality的方法获得了最好的结果（top5:5.3%）。而且即使在FLOP只有1/2的情况下，ResNeXt也比ResNet效果好。</p>
 
-<h3 id="code-blocks-in-lists">Code Blocks in Lists</h3>
 
-<p>Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., <code class="highlighter-rouge">1.</code>). Usually this will mean indenting 3 spaces instead of 4.</p>
+    </div>
+    
+    <!--- DIVIDING LINE -->
+    <hr>
+    
+    <!-- POST TAGS -->
+    <div class="inline-tags">
+        <span>
+        
+            <a href="/tags/#Paper Reading">#Paper Reading&nbsp;&nbsp;&nbsp;</a>
+        
+            <a href="/tags/#Deep Learning">#Deep Learning&nbsp;&nbsp;&nbsp;</a>
+        
+            <a href="/tags/#Network Building Block">#Network Building Block&nbsp;&nbsp;&nbsp;</a>
+        
+        </span>
+    </div>
+    
+    <br>
+    
+    <!-- POST DATE -->
+    <div class="post-date">
+        <span class="entry-date date published updated">
+            <time datetime="2017-04-11T00:00:00+08:00">
+                <a href="http://localhost:8000/deep/learning/2017-04-11/paper-reading-dl-res-next.html">April 11, 2017</a>
+            </time>
+        </span>
+    </div>
+    
+</article>
+
+<article>
+    <!-- POST TITLE -->
+    <header>
+        <h1 class="entry-title">
+            <a href="http://localhost:8000/deep/learning/2017-04-10/paper-reading-driving-end-to-end.html" rel="bookmark" title="CVPR2017: End-to-end Learning of Driving Models from Large-scale Video Datasets" itemprop="url">CVPR2017: End-to-end Learning of Driving Models from Large-scale Video Datasets</a>
+        </h1>
+    </header>
+    
+    <!-- POST CONTENT -->
+    <div class="entry-content">
+        <h2 id="简介">简介</h2>
+<p>采用基于感知的策略学习（perception-based policies）来完成复杂的自动驾驶行为，正在称为计算机视觉的一个重要研究方向。作者认为，虽然基于规则的方法取得了一定的成果，但是基于学习的方法才是终极方案，尤其是在处理复杂少见场景以及需要和多个agent交互作用的情况。在这个方向上已经有不少不做，例如ALVINN等。这些工作把问题定义成从图像像素到操作的映射关系，导致训练上依赖于标定的操作。而本文采用的是无需标定的数据，这样就可以利用大量众包的视频数据，基本只需要一个行车记录仪（+速度和角速度记录）。在问题定义上，把驾驶过程定义成从图像到egomotion的映射关系，而egomotion的groundtruth可以通过速度和角速度记录记录得到。作者采用了FCN-LSTM的网络框架，并把这种网络称为：Deep Generic Driving Networks。</p>
+
+<h2 id="原理">原理</h2>
+
+<p>具体问题定义如下式：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410142523524?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="120" />
+</center>
+
+<p>其中S表示当前和历史的状态信息，包括：历史上见过的画面以及egomotion信息。A表示下一时刻应该采取的egomotion的集合，R表示对应的分数。egomotion有两种描述方式：一种是离散型，比如{直行，停车，左转，右转}；另一种是连续型：用一个二维的速度向量表示，实际训练时，对该二维向量离散成多个bin，进行mulit-nominal学习。这种问题定义和NLP中的语言模型非常相似，所以该模型也称为“驾驶模型”。</p>
+
+<p>FCN-LSTM如下图：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410142733900?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="500" />
+</center>
+
+<p>其中，FCN采用的在ImageNet上pretrain过的AlexNet，去掉了pooling5，并对fc6和fc7采用dilated convolutions。作者指出FCN比直接用CNN效果要好，是因为FCN保留了更多的spatial信息。</p>
+
+<p>Loss方面，作者采用了：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410143725939?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="250" />
+</center>
+
+<p>对于Accuracy，作者采用：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410143854610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="120" />
+</center>
+
+<h2 id="实验">实验</h2>
+<p>模型效果：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410144007704?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" />
+</center>
+
+<p>加语义分割任务作为side-task的对比实验效果：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170410144116179?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" />
+</center>
+
+<p>图中，a是不用side-task的方式，b是只用语义分割结果，c是用FCN+side-task的情况。示例中一个是远处有红灯，一个是前方车辆尾灯刹车灯亮，这两种情况中只有c较好地解决了。作者指出，对于只用语义分割的情况可能会丢失一些content信息例如灯的颜色，而加入side-task可以改进一些细微的和不常见的情况下的性能。</p>
+
+<h2 id="结论">结论</h2>
+<p>主要是三个贡献：</p>
 
 <ol>
-  <li>Do step 1.</li>
-  <li>
-    <p>Now do this:</p>
-
-    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</code></pre>
-    </div>
-  </li>
-  <li>Now you can do this.</li>
+  <li>重新定义了问题，采用了图像到egomotion的映射。</li>
+  <li>采用了FCN-LSTM的架构。</li>
+  <li>采用语义分割作为side-task，并提高了模型性能。</li>
 </ol>
 
-<h3 id="github-gist-embed">GitHub Gist Embed</h3>
-
-<p>An example of a Gist embed below.</p>
-
-<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
     </div>
     
@@ -447,11 +279,11 @@
     <div class="inline-tags">
         <span>
         
-            <a href="/tags/#sample post">#sample post&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Paper Reading">#Paper Reading&nbsp;&nbsp;&nbsp;</a>
         
-            <a href="/tags/#code">#code&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Deep Learning">#Deep Learning&nbsp;&nbsp;&nbsp;</a>
         
-            <a href="/tags/#highlighting">#highlighting&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Autonomous Driving">#Autonomous Driving&nbsp;&nbsp;&nbsp;</a>
         
         </span>
     </div>
@@ -461,8 +293,8 @@
     <!-- POST DATE -->
     <div class="post-date">
         <span class="entry-date date published updated">
-            <time datetime="2016-11-18T00:00:00-05:00">
-                <a href="http://localhost:4000/posts/2016-11-18/code-highlighting-post.html">November 18, 2016</a>
+            <time datetime="2017-04-10T00:00:00+08:00">
+                <a href="http://localhost:8000/deep/learning/2017-04-10/paper-reading-driving-end-to-end.html">April 10, 2017</a>
             </time>
         </span>
     </div>
@@ -473,21 +305,72 @@
     <!-- POST TITLE -->
     <header>
         <h1 class="entry-title">
-            <a href="http://localhost:4000/posts/2016-11-14/video-post.html" rel="bookmark" title="A Video Post" itemprop="url">A Video Post</a>
+            <a href="http://localhost:8000/deep/learning/2017-04-09/paper-reading-dl-neural-art.html" rel="bookmark" title="Paper Reading: A Neural Algorithm of Artistic Style" itemprop="url">Paper Reading: A Neural Algorithm of Artistic Style</a>
         </h1>
     </header>
     
     <!-- POST CONTENT -->
     <div class="entry-content">
-        <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EqAnYPiZiNA" frameborder="0" allowfullscreen=""></iframe>
+        <h2 id="简介">简介</h2>
+<p>解决的是一个有趣的问题，即给两幅图C(content)和S(style)，保留C的content，保留S的style，得到一副新的图像。例如：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408191713226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" />
 </center>
 
-<p>Video embeds are responsive and scale with the width of the main content block with the help of <a href="http://fitvidsjs.com/">FitVids</a>.</p>
+<p>CNN的不同层编码了不同抽象层次的信息，可以借助不同层的Feature Map来对生成图像的content和style进行约束，见下图：</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"//www.youtube.com/embed/SU3kYxJmWuQ"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-</code></pre>
-</div>
+<center>
+    <img src="http://img.blog.csdn.net/20170409143704521?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="500" />
+</center>
+
+<h2 id="neural-art">Neural Art</h2>
+
+<p>本文的原理非常简单。</p>
+
+<p>设content图像为C，待生成的图像为X。先将X设置为随机噪声，然后作为VGG的输入，C同样也过一遍VGG，这样对于某个层l，两者都会得到feature map，分为设置为P和F，则content loss定义为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170409144031447?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="200" />
+</center>
+
+<p>固定住两个支路的所有参数，除了X本身。对X本身进行梯度下降，得到的X即是和C保持了content一致性（一定意义上）。</p>
+
+<p>对于style，loss定义稍微改变一点，使用了Gram matrix。对于某个feature map F，Gram matrix为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170409144402733?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="120" />
+</center>
+
+<p>即gram matrix的维度为NxN，N为channels，每个元素的值是对第i个channel和第j个channel求内积得到的。实际上是协方差矩阵。个人理解是通过gram matrix，是的约束更多是考虑统计特征，而不是localization相关的content。</p>
+
+<p>style loss定义为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170409145138541?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="160" />
+</center>
+
+<p>综合起来，loss为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170409145446393?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="280" />
+</center>
+
+<h2 id="实验">实验</h2>
+<p>一些对比实验结果如下：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170409145323346?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" />
+</center>
+
+<p>包括对不同层的选用，以及两个loss之前权重的选择等。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>使用了非常简单粗暴的方法，利用物体检测任务训练得到的模型（VGG）的特征，即可实现不错的图像风格转换的效果。其中，在style loss中对gram matrix的使用值得借鉴。</p>
+
+<p>不足：这种方式需要对生成图像进行梯度下降，而VGG模型不小，耗时应该是一个主要问题。</p>
+
 
     </div>
     
@@ -498,9 +381,11 @@
     <div class="inline-tags">
         <span>
         
-            <a href="/tags/#sample post">#sample post&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Paper Reading">#Paper Reading&nbsp;&nbsp;&nbsp;</a>
         
-            <a href="/tags/#video">#video&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Deep Learning">#Deep Learning&nbsp;&nbsp;&nbsp;</a>
+        
+            <a href="/tags/#Style Transfer">#Style Transfer&nbsp;&nbsp;&nbsp;</a>
         
         </span>
     </div>
@@ -510,8 +395,8 @@
     <!-- POST DATE -->
     <div class="post-date">
         <span class="entry-date date published updated">
-            <time datetime="2016-11-14T00:00:00-05:00">
-                <a href="http://localhost:4000/posts/2016-11-14/video-post.html">November 14, 2016</a>
+            <time datetime="2017-04-09T00:00:00+08:00">
+                <a href="http://localhost:8000/deep/learning/2017-04-09/paper-reading-dl-neural-art.html">April 09, 2017</a>
             </time>
         </span>
     </div>
@@ -522,52 +407,86 @@
     <!-- POST TITLE -->
     <header>
         <h1 class="entry-title">
-            <a href="http://localhost:4000/posts/2016-11-10/readability-post.html" rel="bookmark" title="Testing Readability with a Bunch of Text" itemprop="url">Testing Readability with a Bunch of Text</a>
+            <a href="http://localhost:8000/deep/learning/2017-04-08/paper-reading-dl-learning-to-learn.html" rel="bookmark" title="CVPR2017: Learning to learn by gradient descent by gradient descent" itemprop="url">CVPR2017: Learning to learn by gradient descent by gradient descent</a>
         </h1>
     </header>
     
     <!-- POST CONTENT -->
     <div class="entry-content">
-        <p>Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90’s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney’s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.</p>
+        <h2 id="简介">简介</h2>
+<p>昨天DeepMind开源了基于TensorFlow的深度学习库——<a href="https://deepmind.com/blog/open-sourcing-sonnet/">Sonnet</a>。DeepMind之前发布的learning to learn的<a href="https://github.com/deepmind/learning-to-learn">代码</a>实际上就是基于Sonnet实现的。</p>
 
-<p>Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.</p>
+<p>本文解决的是优化算法的学习问题。具体来说，机器学习中我们经常可以把优化目标表示成：</p>
 
-<h2 id="cupidatat-90s-lo-fi-authentic-try-hard">Cupidatat 90’s lo-fi authentic try-hard</h2>
+<center>
+    <img src="http://img.blog.csdn.net/20170408184112158?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="150" />
+</center>
 
-<p>In pug Portland incididunt mlkshk put a bird on it vinyl quinoa. Terry Richardson shabby chic +1, scenester Tonx excepteur tempor fugiat voluptate fingerstache aliquip nisi next level. Farm-to-table hashtag Truffaut, Odd Future ex meggings gentrify single-origin coffee try-hard 90’s.</p>
+<p>标准的优化过程是更新如下过程：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408184217208?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="180" />
+</center>
+
+<p>这样的做法只考虑了一阶导数而不考虑二阶导数，显然会损失性能。典型的方法是通过Hessian matrix等方法来弥补。而现代的更多的方法则是针对具体类问题，比如深度学习领域经常使用的方法有：momentum、Rprop、Adagrad、RMSprop、ADAM。使用这些方法的一个最大问题是：在不同的问题上需要选择不同的优化方法。</p>
+
+<p>本文试图寻找一个大一统的方案：采用RNN来学习参数更新过程，而不是手动去选择不同的优化方法。如下式：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408184811304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="180" />
+</center>
+
+<p>这样问题变成如何去学习函数g。作者把该问题称为：Learning to learn。</p>
+
+<h2 id="learning-to-learn">Learning to learn</h2>
+<p>作者采用RNN来做Learning to learn，即学习每次迭代的参数更新。显然，采用RNN这种带记忆功能的网络来学习更符合这里的需求（克服传统方法只考虑一阶导数的缺点）。理想的优化目标为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408185028530?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="160" />
+</center>
+
+<p>即希望这样的参数更新更有利于f的下降。</p>
+
+<p>对于RNN，假设选择记忆的长度为T，则优化目标为：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408185413135?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" />
+</center>
+
+<p>其中m表示RNN，h表示其隐状态。本文的实验中，所有的权重w均取1。</p>
+
+<p>考虑到如果同时学习所有参数，会导致RNN的参数量过大，所以采用了Coordinatewise的方法。可以认为是把参数划分成不同的等分，然后共享参数，但是不共享隐状态。如下图：</p>
+
+<center>
+    <img src="http://img.blog.csdn.net/20170408185747949?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="300" />
+</center>
+
+<h2 id="实验">实验</h2>
+<p>作者做了四个实验：</p>
 
 <ul>
-  <li>Sartorial hoodie</li>
-  <li>Labore viral forage</li>
-  <li>Tote bag selvage</li>
-  <li>DIY exercitation et id ugh tumblr church-key</li>
+  <li>Quadratic functions</li>
+  <li>Training a small neural network on MNIST</li>
+  <li>Training a convolutional network on CIFAR-10</li>
+  <li>Neural Art</li>
 </ul>
 
-<p>Incididunt umami sriracha, ethical fugiat VHS ex assumenda yr irure direct trade. Marfa Truffaut bicycle rights, kitsch placeat Etsy kogi asymmetrical. Beard locavore flexitarian, kitsch photo booth hoodie plaid ethical readymade leggings yr.</p>
+<p>均证明了该方法比其他优化方法更好：收敛快且loss更低，泛华性能也很好。</p>
 
-<p>Aesthetic odio dolore, meggings disrupt qui readymade stumptown brunch Terry Richardson pour-over gluten-free. Banksy american apparel in selfies, biodiesel flexitarian organic meh wolf quinoa gentrify banjo kogi. Readymade tofu ex, scenester dolor umami fingerstache occaecat fashion axe Carles jean shorts minim. Keffiyeh fashion axe nisi Godard mlkshk dolore. Lomo you probably haven’t heard of them eu non, Odd Future Truffaut pug keytar meggings McSweeney’s Pinterest cred. Etsy literally aute esse, eu bicycle rights qui meggings fanny pack. Gentrify leggings pug flannel duis.</p>
+<p>例如，Neural Art实验，loss变化曲线：</p>
 
-<h2 id="forage-occaecat-cardigan-qui">Forage occaecat cardigan qui</h2>
+<center>
+    <img src="http://img.blog.csdn.net/20170408190041014?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="400" />
+</center>
 
-<p>Fashion axe hella gastropub lo-fi kogi 90’s aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole.</p>
+<p>效果：</p>
 
-<blockquote>
-  <p>Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.</p>
-</blockquote>
+<center>
+    <img src="http://img.blog.csdn.net/20170408190120124?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3VsdzE5OTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="600" />
+</center>
 
-<p>Tote bag asymmetrical elit sunt. Occaecat authentic Marfa, hella McSweeney’s next level irure veniam master cleanse. Sed hoodie letterpress artisan wolf leggings, 3 wolf moon commodo ullamco. Anim occupy ea labore Terry Richardson. Tofu ex master cleanse in whatever pitchfork banh mi, occupy fugiat fanny pack Austin authentic. Magna fugiat 3 wolf moon, labore McSweeney’s sustainable vero consectetur. Gluten-free disrupt enim, aesthetic fugiat jean shorts trust fund keffiyeh magna try-hard.</p>
-
-<h2 id="hoodie-duis">Hoodie Duis</h2>
-
-<p>Actually salvia consectetur, hoodie duis lomo YOLO sunt sriracha. Aute pop-up brunch farm-to-table odio, salvia irure occaecat. Sriracha small batch literally skateboard. Echo Park nihil hoodie, aliquip forage artisan laboris. Trust fund reprehenderit nulla locavore. Stumptown raw denim kitsch, keffiyeh nulla twee dreamcatcher fanny pack ullamco 90’s pop-up est culpa farm-to-table. Selfies 8-bit do pug odio.</p>
-
-<h3 id="thundercats-ho">Thundercats Ho!</h3>
-
-<p>Fingerstache thundercats Williamsburg, deep v scenester Banksy ennui vinyl selfies mollit biodiesel duis odio pop-up. Banksy 3 wolf moon try-hard, sapiente enim stumptown deep v ad letterpress. Squid beard brunch, exercitation raw denim yr sint direct trade. Raw denim narwhal id, flannel DIY McSweeney’s seitan. Letterpress artisan bespoke accusamus, meggings laboris consequat Truffaut qui in seitan. Sustainable cornhole Schlitz, twee Cosby sweater banh mi deep v forage letterpress flannel whatever keffiyeh. Sartorial cred irure, semiotics ethical sed blue bottle nihil letterpress.</p>
-
-<p>Occupy et selvage squid, pug brunch blog nesciunt hashtag mumblecore skateboard yr kogi. Ugh small batch swag four loko. Fap post-ironic qui tote bag farm-to-table american apparel scenester keffiyeh vero, swag non pour-over gentrify authentic pitchfork. Schlitz scenester lo-fi voluptate, tote bag irony bicycle rights pariatur vero Vice freegan wayfarers exercitation nisi shoreditch. Chambray tofu vero sed. Street art swag literally leggings, Cosby sweater mixtape PBR lomo Banksy non in pitchfork ennui McSweeney’s selfies. Odd Future Banksy non authentic.</p>
-
-<p>Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.</p>
+<h2 id="结论">结论</h2>
+<p>用Learning to learn的方法来作为优化算法，比其他手工选择的优化算法都要好！</p>
 
     </div>
     
@@ -578,13 +497,11 @@
     <div class="inline-tags">
         <span>
         
-            <a href="/tags/#sample post">#sample post&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Paper Reading">#Paper Reading&nbsp;&nbsp;&nbsp;</a>
         
-            <a href="/tags/#readability">#readability&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Deep Learning">#Deep Learning&nbsp;&nbsp;&nbsp;</a>
         
-            <a href="/tags/#test">#test&nbsp;&nbsp;&nbsp;</a>
-        
-            <a href="/tags/#intro">#intro&nbsp;&nbsp;&nbsp;</a>
+            <a href="/tags/#Learning to Learn">#Learning to Learn&nbsp;&nbsp;&nbsp;</a>
         
         </span>
     </div>
@@ -594,8 +511,8 @@
     <!-- POST DATE -->
     <div class="post-date">
         <span class="entry-date date published updated">
-            <time datetime="2016-11-10T00:00:00-05:00">
-                <a href="http://localhost:4000/posts/2016-11-10/readability-post.html">November 10, 2016</a>
+            <time datetime="2017-04-08T00:00:00+08:00">
+                <a href="http://localhost:8000/deep/learning/2017-04-08/paper-reading-dl-learning-to-learn.html">April 08, 2017</a>
             </time>
         </span>
     </div>
@@ -606,6 +523,15 @@
 <div class="pagination">
 <center>
 <div class="pagination">
+    
+
+        
+            <a href="http://localhost:8000/page2/">OLDER→</a>
+        
+    
+        
+                                         
+        
     
 </div>
 </center>
