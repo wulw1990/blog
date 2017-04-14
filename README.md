@@ -1,6 +1,6 @@
 # My Page
- - liweiwu.com
- - wulw1990.github.io
+ - [liweiwu.com](liweiwu.com)
+ - [wulw1990.github.io](wulw1990.github.io)
 
 # Clean+Simple Jekyll Theme
 
