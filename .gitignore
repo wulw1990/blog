@@ -10,9 +10,5 @@
 *.DS_Store
 
 # build
-install/*
-target/*
-deps/*
-build/*
-
+_site/*
 .sass-cache/*
