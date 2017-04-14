@@ -16,4 +16,3 @@ deps/*
 build/*
 
 .sass-cache/*
-_site/*
