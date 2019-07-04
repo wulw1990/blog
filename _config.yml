@@ -5,8 +5,7 @@ description:      Something...
 future:      false  # publish future dated posts --  true, false (default) 
 highlighter: rouge
 markdown:    kramdown
-gems:
-  - jekyll-sitemap
+plugins:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-feed
@@ -19,14 +18,6 @@ permalink: /:categories/:year-:month-:day/:title.html
 
 # Amount of post to show on home page
 paginate: 5
-
-#kramdown:
-#  input: GFM
-#  auto_ids: true
-#  footnote_nr: 1
-#  entity_output: as_char
-#  toc_levels: 1..6
-#  enable_coderay: false
 
 include: 
   - .htaccess
